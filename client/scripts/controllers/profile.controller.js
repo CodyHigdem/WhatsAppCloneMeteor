@@ -15,14 +15,14 @@ function ProfileCtrl ($scope, $reactive, $state, $ionicPopup, $log){
 
 	////
 
-	function updateName () {
-		if (._isEmpty(this.name)) return;
-
-		Meteor.call('updateName', this.name, (err) => {
-			if (err) return handleError(err);
-			$state.go('tab.chats');
-		});
-	}
+  function updateName () {
+    if (_.isEmpty(this.name)) return;
+ 
+    Meteor.call('updateName', this.name, (err) => {
+      if (err) return handleError(err);
+      $state.go('tab.chats');
+    });
+  }
 
 	function handleError(err){
 		$log.error('profile save error', err);

@@ -22,4 +22,3 @@ angular
 			okType: 'button-positive button-clear'
 		});
 	}
-}

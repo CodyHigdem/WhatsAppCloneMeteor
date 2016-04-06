@@ -2,7 +2,7 @@ angular
 	.module('Whatsapp')
 	.controller('ChatsCtrl', ChatsCtrl);
 
-function ChatsCtrl ($scope, $reactive){
+function ChatsCtrl ($scope, $reactive, newChat){
 	$reactive(this).attach($scope);
 	this.remove = remove;
 
@@ -12,7 +12,10 @@ function ChatsCtrl ($scope, $reactive){
     }
   });
 
-
+  ///
+  	function showNewChatModal(){
+  		NewChat.showModal();
+  	}
 
 	function remove(chat){
 		this.data.remove(chat);

@@ -4,9 +4,13 @@
 	</ion-nav-buttons>
 
 	<ion-content class="profile">
-		<a class="profile-picture positive">
-			<div class="upload-placeholder">
-				Add photo
+		<a class="profile-picture positive" ng-click="profile.updatePicture()">
+			<div ng-if="profile.currentUser.profile.picture">
+				<img ng-src="{{profile.currentUser.profile.picture}}" alt="profile picture">
+					Edit
+			</div>
+			<div ng-if="!profile.currentUser.profile.picture" class="upload-placeholder">
+				Add Photo
 			</div>
 		</a>
 

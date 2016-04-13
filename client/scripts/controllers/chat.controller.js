@@ -28,6 +28,18 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
   });
   ///
 
+  sendPicture() {
+    MeteorCameraUI.getPicture({}, (err, data) =&gt; {
+      if (err) return this.handleError(err);
+
+      this.callMethod('newMessage', {
+        picture: date,
+        type: 'picture',
+        chatId: this.chatId
+      });
+    });
+  }
+
   function sendMessage(){
   	if (_.isEmpty(this.message)) return;
 
